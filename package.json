@@ -4,7 +4,7 @@
   "description": "Mail templating",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "gulp startZest"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,21 @@
   "bugs": {
     "url": "https://github.com/Benjamin-Schodts/Zest/issues"
   },
-  "homepage": "https://github.com/Benjamin-Schodts/Zest#readme"
+  "homepage": "https://github.com/Benjamin-Schodts/Zest#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.1.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.24.6",
+    "cssnano": "^4.0.5",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "node-notifier": "^5.2.1",
+    "postcss-reporter": "^5.0.0",
+    "postcss-scss": "^2.0.0",
+    "stylelint": "^9.4.0"
+  }
 }
