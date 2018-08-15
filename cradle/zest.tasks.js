@@ -1,8 +1,11 @@
+/* eslint-env node */
+
 import createStylelintTask from './tasks/stylelint';
 import createCleanTask from './tasks/clean';
 import createCopyTask from './tasks/copy';
 import createCssLocalTask from './tasks/css';
-import createServerTask from './tasks/server';
+import createInlineCssTask from './tasks/inlineCss';
+import createStyleInjectTask from './tasks/styleInject'
 
 import paths from './config/paths.config';
 
@@ -28,23 +31,25 @@ zest.tasks.cssLocal = createCssLocalTask({
     dest: paths.dist.css
 });
 
-zest.tasks.server = createServerTask({
-    config: {
-        ui: false,
-        ghostMode: false,
-        files: [
-            paths.dist.css.all,
-            paths.dist.img
-        ],
-        open: false,
-        reloadOnRestart: true,
-        proxy: {
-            target: paths.dev_url
-        },
-        https: {
-            key: '.skylab/conf/ssl/dev/star_dev_kunstmaan_be.key',
-            cert: '.skylab/conf/ssl/dev/star_dev_kunstmaan_be.crt'
-        },
-        notify: true
+zest.tasks.styleInject = createStyleInjectTask({
+    src: paths.src.view.entry,
+    dest: paths.temp.view.root
+});
+
+zest.tasks.inlineCss = createInlineCssTask({
+    src: paths.temp.view.entry,
+    dest: paths.dist.view,
+    options: {
+        applyLinkTags: true,
+        applyStyleTags: true,
+        applyTableAttributes: true,
+        applyWidthAttributes: true,
+        codeBlocks: {},
+        extraCss: '',
+        preserveMediaQueries: true,
+        removeLinkTags: true,
+        removeHtmlSelectors: false,
+        removeStyleTags: true,
+        url: ''
     }
 });

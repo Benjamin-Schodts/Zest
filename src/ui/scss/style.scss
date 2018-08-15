@@ -1,0 +1,9 @@
+body {
+    background: #000000;
+}
+
+p {
+    @media (max-width: 600px) {
+        color: blue !important;
+    }
+}

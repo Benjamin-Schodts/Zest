@@ -1,7 +1,4 @@
-// require('babel-register')({
-//     presets: [ 'env' ]
-// })
-
+/* eslint-env node */
 
 import gulp from 'gulp';
 
@@ -15,17 +12,14 @@ const analyzeZest = gulp.series(
 const buildZest = gulp.series(
     zest.tasks.clean,
     zest.tasks.copy,
-    zest.tasks.cssLocal
-);
-
-const startZestServer = gulp.series(
-    zest.tasks.server  
+    zest.tasks.cssLocal,
+    zest.tasks.styleInject,
+    zest.tasks.inlineCss
 );
 
 const startZest = gulp.series(
     analyzeZest,
     buildZest,
-    startZestServer,
     buildOnChange,
     testOnChange
 );
