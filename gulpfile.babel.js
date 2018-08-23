@@ -1,9 +1,8 @@
-/* eslint-env node */
-
 import gulp from 'gulp';
 
-import {zest} from './cradle/zest.tasks';
-import {buildOnChange, testOnChange} from './cradle/common.tasks'
+import {zest} from './utils/cradle/zest.tasks';
+import {translate} from './utils/scribe/scribe.tasks';
+import {buildOnChange, testOnChange} from './utils/cradle/common.tasks';
 
 const analyzeZest = gulp.series(
     zest.tasks.stylelint
@@ -17,9 +16,19 @@ const buildZest = gulp.series(
     zest.tasks.inlineCss
 );
 
+const startScribe = gulp.series(
+    translate  
+);
+
+const cleanUp = gulp.series(
+    zest.tasks.removeTemp
+)
+
 const startZest = gulp.series(
     analyzeZest,
     buildZest,
+    startScribe,
+    cleanUp,
     buildOnChange,
     testOnChange
 );

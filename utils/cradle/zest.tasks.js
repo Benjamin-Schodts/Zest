@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 import createStylelintTask from './tasks/stylelint';
 import createCleanTask from './tasks/clean';
 import createCopyTask from './tasks/copy';
@@ -7,7 +5,7 @@ import createCssLocalTask from './tasks/css';
 import createInlineCssTask from './tasks/inlineCss';
 import createStyleInjectTask from './tasks/styleInject'
 
-import paths from './config/paths.config';
+import paths from '../config/paths.config';
 
 export const zest = {
     tasks: {}
@@ -19,6 +17,10 @@ zest.tasks.stylelint = createStylelintTask({
 
 zest.tasks.clean = createCleanTask({
     target: [paths.dist.root]
+});
+
+zest.tasks.removeTemp = createCleanTask({
+    target: [paths.temp.root]
 });
 
 zest.tasks.copy = createCopyTask({
@@ -38,7 +40,7 @@ zest.tasks.styleInject = createStyleInjectTask({
 
 zest.tasks.inlineCss = createInlineCssTask({
     src: paths.temp.view.entry,
-    dest: paths.dist.view,
+    dest: paths.dist.view.root,
     options: {
         applyLinkTags: true,
         applyStyleTags: true,

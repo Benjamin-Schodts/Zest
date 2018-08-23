@@ -12,13 +12,20 @@ module.exports = {
             root: './src/view/',
             entry: './src/view/*.html',
             all: './src/view/**/*.html'
+        },
+        translations: {
+            root: './src/translations/',
+            all: './src/translations/**'
         }
     },
     dist: {
         root: './dist/',
         css: './dist/css/',
         img: './dist/img/',
-        view: './dist/view/'
+        view: {
+            root: './dist/view/',
+            translated: './dist/view/translated/'
+        }
     },
     temp: {
         root: './temp/',

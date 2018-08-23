@@ -4,7 +4,8 @@
   "description": "Mail templating",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "start": "gulp startZest"
+    "start": "gulp startZest",
+    "create": "gulp createPagepart"
   },
   "repository": {
     "type": "git",
@@ -35,9 +36,12 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-style-inject": "^0.1.1",
+    "js-yaml": "^3.12.0",
+    "mkdirp": "^0.5.1",
     "node-notifier": "^5.2.1",
     "postcss-reporter": "^5.0.0",
     "postcss-scss": "^2.0.0",
+    "prompt": "^1.0.0",
     "stylelint": "^9.4.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-order": "^0.3.0"
