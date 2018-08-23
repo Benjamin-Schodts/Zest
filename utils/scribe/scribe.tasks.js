@@ -53,8 +53,8 @@ function prepareTranslation(html, translationFile, translationKeys, sourceFile) 
 
     translationKeys.forEach((key) => {
         const lookupKey = lookUpTranslation(key, translationFile, sourceFile);
-
-        if (!lookupKey instanceof Object) {
+        
+        if (!(lookupKey instanceof Object)) {
             translatedContent = translatedContent.replace(
                 new RegExp(key, 'g'), 
                 lookupKey
@@ -82,6 +82,8 @@ function lookUpTranslation(key, translationFile, sourceFile) {
             return false;
         }
     });
+
+    return lookupKey;
 }
 
 function createTranslationFile(translatedContent, translationFile, sourceFile) {
