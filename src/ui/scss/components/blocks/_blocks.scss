@@ -1,9 +1,11 @@
 /* ==========================================================================
-   General
+   Components - Blocks
 
-   Never add styles directly to this file - set up imports
+   This file is exclusively intended for setting up imports
+   Never add styles directly to this file
    ========================================================================== */
 
-/* Base
+/* General
    ========================================================================== */
-@import "base";
+@import "img";
+@import "a";

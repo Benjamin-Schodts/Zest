@@ -20,11 +20,15 @@ module.exports = {
     },
     dist: {
         root: './dist/',
-        css: './dist/css/',
+        css: {
+            root: './dist/css/',
+            extra: './dist/css/head-styles.css'
+        },
         img: './dist/img/',
         view: {
             root: './dist/view/',
-            translated: './dist/view/translated/'
+            translated: './dist/view/translated/',
+            entry: './dist/view/*.html'
         }
     },
     temp: {

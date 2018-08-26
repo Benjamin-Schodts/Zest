@@ -1,6 +1,7 @@
 import fs from 'fs';
 import mkdirp from 'mkdirp';
 import yaml from 'js-yaml';
+import pretty from 'pretty';
 import paths from '../config/paths.config';
 
 export function translate(done) {
@@ -12,13 +13,13 @@ export function translate(done) {
                         if (!err) {
                             processTranslations(data, sourceFile);
                         } else {
-                            console.log(err);
+                            console.log(`Seems as if something went wrong in translate\n[${err}]`);
                         }
                     }); 
                 }
             });
         } else {
-            console.log(err);
+            console.log(`Seems as if something went wrong in translate\n[${err}]`);
         }
     });
 
@@ -35,7 +36,7 @@ function processTranslations(data, sourceFile) {
                     prepareTranslation(data, translationFile, translationKeys, sourceFile);
                 });
             } else {
-                console.log(err);
+                console.log(`Seems as if something went wrong in processTranslations\n[${err}]`);
             }
         });
     }
@@ -78,7 +79,7 @@ function lookUpTranslation(key, translationFile, sourceFile) {
             lookupKey = lookupKey[part];
             return true;
         } else {
-            console.log(`Can't find {{${splitTranslationLookupKey}}} key in ${translationFile} for ${sourceFile}`);
+            console.log(`[${sourceFile}] Cannot find {{${splitTranslationLookupKey}}} key in ${translationFile}`);
             return false;
         }
     });
@@ -87,18 +88,20 @@ function lookUpTranslation(key, translationFile, sourceFile) {
 }
 
 function createTranslationFile(translatedContent, translationFile, sourceFile) {
+    const finalContent = pretty(translatedContent, {ocd: true});
+
     mkdirp(`${paths.dist.view.translated}${sourceFile.split('.')[0]}`, function (err) {
         if (err) {
-            console.error(err)
+            console.log(`Seems as if something went wrong in createTranslationFile\n[${err}]`)
         } else {
             fs.writeFile(
                 `${paths.dist.view.translated}${sourceFile.split('.')[0]}/${sourceFile.split('.')[0]}_${translationFile.split('.')[0]}.${sourceFile.split('.')[1]}`, // Destination path
-                translatedContent, // Content
+                finalContent, // Content
                 function (err) {
                     if (!err) {
                         console.log(`Translation ${translationFile.split('.')[0]} made for ${sourceFile}`);
                     } else {
-                        console.log(err);
+                        console.log(`Seems as if something went wrong in createTranslationFile\n[${err}]`);
                     }
                 }
             );

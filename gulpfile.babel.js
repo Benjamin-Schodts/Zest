@@ -13,11 +13,12 @@ const buildZest = gulp.series(
     zest.tasks.copy,
     zest.tasks.cssLocal,
     zest.tasks.styleInject,
-    zest.tasks.inlineCss
+    zest.tasks.inlineCss,
+    zest.tasks.extraStyleInject
 );
 
 const startScribe = gulp.series(
-    translate  
+    translate
 );
 
 const cleanUp = gulp.series(

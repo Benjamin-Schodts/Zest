@@ -1,23 +1,18 @@
-@charset "UTF-8";
-
 /* ==========================================================================
-   Stylesheet for all browsers
+   Scaffolding
 
-   Never add styles directly to this file - set up imports
+   This file is exclusively intended for setting up imports
+   Never add styles directly to this file
    ========================================================================== */
 
-/* Config
+/* Table
    ========================================================================== */
-@import "config/config";
+@import "table";
 
-/* General
+/* Tr
    ========================================================================== */
-@import "general/general";
+@import "tr";
 
-/* Scaffolding
+/* Td
    ========================================================================== */
-@import "scaffolding/scaffolding";
-
-/* Components
-   ========================================================================== */
-@import "components/components";
+@import "td";

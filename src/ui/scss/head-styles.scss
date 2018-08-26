@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Head Styles
+
+   This file is exclusively intended for setting up extra css
+   which will be set up in the head of the html file
+   ========================================================================== */
+
+#outlook a {
+    padding: 0;
+}
+
+.ExternalClass {
+    line-height: 100%;
+
+    p,
+    span,
+    font,
+    td,
+    div {
+        line-height: 100%;
+    }
+}

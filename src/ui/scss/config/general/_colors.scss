@@ -1,9 +1,11 @@
 /* ==========================================================================
-   General
+   Config - General - Colors
 
-   Never add styles directly to this file - set up imports
+   This file is exclusively intended for setting up variables
+   Never add styles directly to this file
    ========================================================================== */
 
-/* Base
+/* Default
    ========================================================================== */
-@import "base";
+$white:  #FFFFFF;
+$black:  #000000;
