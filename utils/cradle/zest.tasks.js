@@ -3,7 +3,7 @@ import createCleanTask from './tasks/clean';
 import createCopyTask from './tasks/copy';
 import createCssLocalTask from './tasks/css';
 import createInlineCssTask from './tasks/inlineCss';
-import {createStyleInjectTask, createExtraStyleInjectTask} from './tasks/styleInject';
+import {createStyleInjectTask} from './tasks/styleInject';
 
 import paths from '../config/paths.config';
 
@@ -36,12 +36,6 @@ zest.tasks.cssLocal = createCssLocalTask({
 zest.tasks.styleInject = createStyleInjectTask({
     src: paths.src.view.entry,
     dest: paths.temp.view.root
-});
-
-zest.tasks.extraStyleInject = createExtraStyleInjectTask({
-    src: paths.dist.view.entry,
-    dest: './',
-    styles: paths.dist.css.extra 
 });
 
 zest.tasks.inlineCss = createInlineCssTask({

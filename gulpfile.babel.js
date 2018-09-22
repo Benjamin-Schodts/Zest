@@ -13,8 +13,7 @@ const buildZest = gulp.series(
     zest.tasks.copy,
     zest.tasks.cssLocal,
     zest.tasks.styleInject,
-    zest.tasks.inlineCss,
-    zest.tasks.extraStyleInject
+    zest.tasks.inlineCss
 );
 
 const startScribe = gulp.series(
@@ -23,7 +22,7 @@ const startScribe = gulp.series(
 
 const cleanUp = gulp.series(
     zest.tasks.removeTemp
-)
+);
 
 const startZest = gulp.series(
     analyzeZest,
