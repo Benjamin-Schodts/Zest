@@ -1,4 +1,33 @@
-title: Goeiendag Wereld!!!!!!
-content: Dit is content
-confirmation:
-  content: Other content maybe
+title: Mijn Zorgbedrijf
+online:
+    text: Bekijk deze e-mail 
+    link:
+        text: online
+        url: "*|ARCHIVE|*"
+banner: Dag Evelien!
+content_white:
+    h1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    cta: Deze dienst aanvragen
+content_green:
+    h3: Lorem ipsum dolor sit amet
+    text: Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    cta: Meer info
+footer:
+    online:
+        text: Having difficulties reading this email? 
+        link:
+            text: View this email online
+            url: "*|ARCHIVE|*"
+    unsubscribe:
+        text: Do you no longer wish to receive these emails?
+        link:
+            text: You can unsubscribe here
+            url: "*|UNSUB|*"
+    copyright:
+        text: © Zorgbedrijf Company nv/sa | 
+        link:
+            text: www.zorgbedrijf.antwerpen.be
+            url: www.zorgbedrijf.antwerpen.be/

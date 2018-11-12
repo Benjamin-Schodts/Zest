@@ -10,14 +10,22 @@ table {
 
 .table__container {
     @media (max-width: $screen-mobile) {
-        width: 100% !important;
+        width: 100%
     }
 }
 
 #backgroundTable {
-    width: 100% !important;
+    width: 100%;
     padding: 0;
     margin: 0;
 
     line-height: 100% !important;
+}
+
+#innerTable {
+    width: $screen-mobile;
+
+    @media (max-width: $screen-mobile) {
+        width: 100%;
+    }
 }
